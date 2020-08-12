@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>测试JavaScript</title>
+        <script type="text/javascript" src="1test.js" defer="defer"></script>
+        <script>
+            window.onload = function () {
+                var images = document.getElementsByTagName("img");
+                for(var i = 0; i < images.length; i++){
+                    var image = images[i];
+                    if(image.addEventListener){
+                        image.addEventListener("click", hide, false);
+                    }else{
+                        image.attachEvent("onclick", hide);
+                    }
+                }
+
+                function hide(event) {
+                    event.target.style.visibility = 'hidden';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="echo">222</h1>
+    </body>
+</html>
